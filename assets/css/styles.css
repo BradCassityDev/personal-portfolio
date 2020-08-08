@@ -1,0 +1,114 @@
+/* Defining CSS Variables */
+:root {
+    --bg-color: #EDEEF8;
+    --title-bg-color: #9FC7CD;
+    --primary-font-color: #465671;
+    --secondary-font-color: #31343E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+    display: inline;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-font-color);
+}
+/* Header Styles */
+header {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #31343E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 9999;
+}
+header .logo-section a {
+    text-decoration: none;
+    color: var(--secondary-font-color);
+    font-weight: bold;
+    background-color: var(--title-bg-color);
+    margin-left: 50px;
+}
+header nav {
+    
+}
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--title-bg-color);
+}
+header nav ul li a {
+    text-decoration: none;
+    color: var(--title-bg-color);
+    font-size: 1.5vw;
+} 
+.hero {
+    height: 350px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.hero div {
+    
+}
+/* Section Styles */
+section {
+    display: flex;
+    padding: 25px 50px;
+}  
+.section-title {
+    border-right: 3px solid var(--secondary-font-color);
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    text-align: right;
+}
+.section-title h1 {
+    font-size: 55px;
+}
+.section-content {
+    width: 75%;
+    padding: 25px;
+}
+.section-content p {
+    padding: 10px 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.project-item {
+    display: flex;
+    border: 3px solid var(--title-bg-color);
+}
+.project-item-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+}
+
+.title-box {
+    background-color: var(--title-bg-color);
+    padding: 10px;
+    display: inline;
+}
