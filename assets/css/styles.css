@@ -5,16 +5,13 @@
     --primary-font-color: #465671;
     --secondary-font-color: #31343E;
 }
-
+/* All element shared styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h1, h2, h3, h4 {
-    display: inline;
-}
-
+/* Body styles */
 body {
     background-color: var(--bg-color);
     color: var(--primary-font-color);
@@ -28,11 +25,12 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: -webkit-sticky;
-    position: sticky;
+    /*position: -webkit-sticky;
+    position: sticky;*/
     z-index: 9999;
     top: 0;
 }
+/* Site Logo Section */
 header .logo-section a {
     text-decoration: none;
     color: var(--secondary-font-color);
@@ -40,6 +38,7 @@ header .logo-section a {
     background-color: var(--title-bg-color);
     padding: 5px 5px 5px 50px;
 }
+/* Main Navigation Styles */
 header nav {
     display: flex;
     flex-wrap: wrap;
@@ -51,14 +50,23 @@ header nav ul {
 header nav ul li {
     display: inline;
     margin: 0 15px;
-    padding: 5px 10px;
-    border-bottom: 2px solid var(--title-bg-color);
 }
+/* Main Navigation Links  */
 header nav ul li a {
     text-decoration: none;
     color: var(--title-bg-color);
     font-size: 1.5vw;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--title-bg-color);
 } 
+/* Main Navigation Links on Hover */
+header nav ul li a:hover {
+    background-color: var(--title-bg-color);
+    border-radius: 15px;
+    border-bottom: none;
+    color: var(--secondary-font-color);
+} 
+/* Hero Section Styles */
 .hero {
     height: 350px;
     width: 100%;
@@ -68,16 +76,32 @@ header nav ul li a {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    text-align: center;
+}
+/* Hero Section Inner Content */
+.hero-content {
+    padding-bottom: 25px;
+}
+/* Hero Profile Picture */
+.profile-picture {
+    background-image: url("../images/profile-pic.png");
+    background-size: cover;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 15px auto;
 }
 /* Section Styles */
 section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 50px;
+    padding: 0 50px;
+    margin-bottom: 25px;
 }  
+/* Section Titles Styles */
 .section-title {
-    border-right: 3px solid var(--secondary-font-color);
+    border-right: 3px solid var(--primary-font-color);
     flex: 1 25%;
     display: flex;
     justify-content: flex-end;
@@ -87,6 +111,7 @@ section {
 .section-title h1 {
     font-size: 55px;
 }
+/* Section Content Containers */
 .section-content {
     flex: 1 70%;
     padding:  0 25px;
@@ -96,7 +121,7 @@ section {
 .section-content p {
     padding: 10px 0;
 }
-
+/* Project Tile Grid Container */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -105,6 +130,7 @@ section {
     width: 100%;
     position: relative;
 }
+/* Project Tile in Grid */
 .project-item {
     border: 3px solid var(--title-bg-color);
     display: flex;
@@ -114,9 +140,11 @@ section {
     position: relative;
     z-index: 1;
 }
+/* Project Tile Image - Change Opacity on hover */
 .project-item:hover .project-bg {
     opacity: 1;
 }
+/* Project Tile Image */
 .project-bg {
     position: absolute;
     z-index: -1;
@@ -128,27 +156,28 @@ section {
     height: 100%;
     transition: opacity 0.6s;
 }
-
+/* Project Item 1 - Make larger than other tiles */
 .project-item-1 {
     grid-column: 1 / span 2;
     grid-row: 1 /span 2;
 }
+/* Setting Project Tile Images */
 .project-bg-1 {
-    background-image: url("../images/deathstar.jpg");
+    background-image: url("../images/code.jpg");
 }
 .project-bg-2 {
-    background-image: url("../images/deathstar.jpg");
+    background-image: url("../images/code.jpg");
 }
 .project-bg-3 {
-    background-image: url("../images/deathstar.jpg");
+    background-image: url("../images/code.jpg");
 }
 .project-bg-4 {
-    background-image: url("../images/deathstar.jpg");
+    background-image: url("../images/code.jpg");
 }
 .project-bg-5 {
     background-image: url("../images/runbuddy.PNG");
 }
-
+/* Project Description inside each Project Tile */
 .project-title {
     margin-top: 50px;
     margin-bottom: 10px;
@@ -157,33 +186,44 @@ section {
     left: 0;
     opacity: 1;
 }
-.project-title h3, .project-title h4 {
-    display: block;
-}
+/* Contact Section Container */
 .contact-container {
     width: 100%;
 }
+/* Contact Links List */
 #contact-me ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-}
-#contact-me ul {
     padding: 5px;
-    
 }
+/* Contact Links List Item */
 #contact-me ul li {
-    display: flex;
+    padding: 15px 5px;
 }
+/* Contact Link */
 #contact-me ul li a {
     padding: 5px;
     color: var(--primary-font-color);
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 3px solid var(--primary-font-color);
+    display: inline-block;
 }
+/* Set Link Style AFTER */
+#contact-me ul li a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px var(--primary-font-color);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+/* Annimate Links on Hover */
+#contact-me ul li a:hover:after {
+    transform: scalex(1);
+}
+/* Default box around titles on site */
 .title-box {
     background-color: var(--title-bg-color);
     padding: 10px;
@@ -191,46 +231,59 @@ section {
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
+    /* Center Flex content in hero */
+    .hero {
+        justify-content: center;
+    }
+    /* reduce section padding */
     section {
         padding: 15px;
     }
+    /* reduce section title size */
     .section-title h1 {
         font-size: 36px;
     }
+    /* adjusting header navigation link sizes */
     header nav ul li a {
         font-size: 18px;
     }
-    header .logo-section a {
-
-    }
+    /* Change grid project items to take all available columns */
     .project-item {
         grid-column: 1 / span 3;
+    }
+    /* Change opacity of project tiles to 1 */
+    .project-bg {
+        opacity: 1;
     }
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
+    /* Center Header Contents */
     header {
         justify-content: center;
         padding: 0px 0px 15px 0;
     }
+    /* Flex navigation items to center */
     header nav {
         flex: 1 100%;
         justify-content: center;
     }
+    /* Add additional margin between logo and navigation */
     header nav ul {
         margin-top: 5%;
     }
+    /* change padding of logo */
     .logo-section h1 a {
         padding: 5px;
     }
-    .section-title {
-        flex: 1 100%;
-    }
+    /* Adjust content to fill full row */
     .section-content {
         flex: 1 100%;
     }
+    /* Adjustments to Section titles */
     .section-title {
+        flex: 1 100%;
         text-align: center;
         border-right: none;
         border-bottom: 3px solid var(--secondary-font-color);
@@ -238,13 +291,27 @@ section {
         max-width: 50%;
         margin-bottom: 25px;
     }
-    .section-title h3 {
-        text-align: center;
-    }
-
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-    
+    /* Adjust main navigation margin */
+    header nav ul {
+        margin-bottom: 15px;
+    }
+    /* Change font size of links in header */
+    header nav ul li a {
+        font-size: 16px;
+    }
+    /* Center flex items in contact links */
+    #contact-me ul {
+        justify-content: center;
+    }
+    /* Contact link adjustments */
+    #contact-me ul li {
+        flex: 1 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
 }
