@@ -80,7 +80,8 @@ header nav ul li a:hover {
 }
 /* Hero Section Inner Content */
 .hero-content {
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    background-color: rgba(0,0,0,.6);
 }
 /* Hero Profile Picture */
 .profile-picture {
@@ -109,7 +110,7 @@ section {
     text-align: right;
 }
 .section-title h1 {
-    font-size: 55px;
+    font-size: 50px;
 }
 /* Section Content Containers */
 .section-content {
