@@ -229,6 +229,54 @@ section {
     background-color: var(--title-bg-color);
     padding: 10px;
 }
+/* Resume Content */
+.resume {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Resume Title of Page */
+.resume-title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 50px;
+}
+.resume-title h1 {
+    width: 75%;
+    border-bottom: 3px solid var(--primary-font-color);
+    margin: 0 auto;
+}
+/* Resume header elements */
+.resume h2, .resume h3, .resume h4 {
+    margin: 25px 0;
+}
+.resume h3 {
+    border-top: 1px solid var(--primary-font-color);
+    width: 100%;
+    padding-top: 30px;
+}
+/* resume paragraph styles */
+.resume p {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/* Resume Lists */
+.resume ul {
+    text-align: left;
+    padding-left: 50px;
+
+}
+/* Bolds text in span */
+.bold-span {
+    font-weight: bold;
+}
+/* italic text in span */
+.italic-span {
+    font-style: italic;
+}
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -291,6 +339,15 @@ section {
         justify-content: center;
         max-width: 50%;
         margin-bottom: 25px;
+    }
+    /* resume content */
+    .resume {
+        width: 90%;
+    }
+    /* resume paragraph styles */
+    .resume p {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
